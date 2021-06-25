@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sliders.css">
+    <script src="main.js" defer type="module"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="UIcontainer">
+        <div id="header">
+            <button id="generateNewArrayBTN" class="button">Random Numbers</button>
+            <button id="bubbleSortBTN" class="button">Bubble Sort</button>
+            <button id="selectionSortBTN" class="button">Selection Sort</button>
+            <button id="mergeSortBTN" class="button">Merge Sort</button>
+            <button id="sort4BTN" class="button">Sort</button>
+            
+        </div><br> <br>
+        <div id="slidersContainer">
+            <form action="">
+                <div id="sliders">
+                    <input type="range" min="5" max="50" value="30" class="slider" id="numbersLength" name="numbersLength"> 
+                    <!-- max was 100 -->
+                    <input type="range" min="4" max="200" value="200" class="slider" id="animSpeed" name="animSpeed">
+                </div>
+                <div id="labels">
+                    <label for="numbersLength" class="label">Size</label>
+                    <label for="animSpeed" class="label">Speed</label>
+
+                </div>
+                
+            </form>    
+        </div>
+        <div id="note">
+            DISCLAIMER, this is not a real time sorting speed<br> One may seem faster than another but dont take that into consideration.
+        </div>
+    </div>
+    <div id="board"></div>
+</body>
+</html>

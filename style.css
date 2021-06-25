@@ -1,0 +1,48 @@
+body{
+    width: 99%;
+    background-color: #2d2d30;
+   
+}
+#board{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 90%;
+    height: 99%;
+}
+#header{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.element{
+    width: 0.7vw;
+    background-color: turquoise;
+    margin: 1px;
+}
+.button{
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+    z-index: 10;
+}
+#UIcontainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#note{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 8pt;
+    width: 300px;
+}
