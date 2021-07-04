@@ -67,8 +67,10 @@ selectionSortBTN.id.addEventListener('click', e=>{
 mergeSortBTN.id.addEventListener('click', e=>{
     if(!bubbleSortBTN.clicked && !selectionSortBTN.clicked && !mergeSortBTN.clicked)
     {
+        animations.length = 0;
         console.log(`Original array ${array}`);
         mergeSort(array, animations); // sorts the array and gives me the animations
+        console.log(animations);
         playAnimation(elements, animations, ANIMATION_SPEED);
         mergeSortBTN.clicked = true;
         console.log(`Sorted by merge sort ${array}`);

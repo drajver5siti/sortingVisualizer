@@ -5,6 +5,7 @@ let flag = false;
 let counter = 0;
 export function mergeSort(Arr, animations) {
      // this function splits the arrays into smaller pieces and calls a second function that compares and merges them
+     console.log(Arr);
      if (!flag) {
           globalArray = [...Arr];
           flag = true;
@@ -26,11 +27,13 @@ export function mergeSort(Arr, animations) {
      // when the arrays reach to be size of 1 the function will return and will start merging them back
      Merge(left, right, Arr, mid, animations);
      counter++;
+     console.log(Arr);
+     console.log('\n');
 }
 
 function Merge(left, right, Arr, mid, animations) {
      // this function compares the smaller pieces, sees which one is smaller and appends the smaller one into the big array
-     console.log(`Merge ${left} and ${right}`);
+     // console.log(`Merge ${left} and ${right}`);
      let nL = left.length;
      let nR = right.length;
      let i = 0;
@@ -40,24 +43,14 @@ function Merge(left, right, Arr, mid, animations) {
      while (i < nL && j < nR) {
           let compareValue1 = getIndexInArray(left[i], globalArray);
           let compareValue2 = getIndexInArray(right[j], globalArray);
-          animations.push(
-               new Animation('changeColor', compareValue1, compareValue2),
-          );
-          animations.push(
-               new Animation('reverseColor', compareValue1, compareValue2),
-          );
-          // console.log(`Comparing at index ${getIndexInArray(left[i], globalArray)} and ${getIndexInArray(right[j], globalArray)}`);
-          // console.log(`Comparing values ${left[i]} and ${right[j]}`);
 
           if (left[i] <= right[j]) {
                // the element from the left array is smaller so it will be appended to the merged array
-               // animations.push(new Animation('swap', k, compareValue1));
                Arr[k] = left[i];
                k++; // this is the counter for the big array
                i++; // this is the counter for the left array
           } // this means the element from the right array is bigger and he will be appended to the big array, these counters allow us to ignore the previous elements that have been already added
           else {
-               // animations.push(new Animation('swap', k, compareValue2));
                Arr[k] = right[j];
                k++;
                j++;
@@ -67,7 +60,6 @@ function Merge(left, right, Arr, mid, animations) {
      if (i === nL) {
           // this means we went trough all the elements of the left array so append the right array
           while (j < nR) {
-               // animations.push(new Animation('swapB', k, getIndexInArray(right[j], globalArray)));
                Arr[k] = right[j];
                k++;
                j++;
@@ -75,7 +67,6 @@ function Merge(left, right, Arr, mid, animations) {
      } // this means we went trough all the elements of the rigth array so append the left array
      else {
           while (i < nL) {
-               // animations.push(new Animation('swapB', k, getIndexInArray(left[i], globalArray)));
                Arr[k] = left[i];
                k++;
                i++;

@@ -1,7 +1,4 @@
-import { elements } from "./main.js";
-
 export function generateNumbers(board, array, NUMBERS) {
-     console.log("generate numbers");
      board.innerHTML = "";
      array.length = 0;
      for (let i = 0; i < NUMBERS; i++) {
@@ -23,7 +20,6 @@ export function generateNumbers(board, array, NUMBERS) {
           }
           // array.push(Math.floor(Math.random() * 70 + 1));
      }
-     console.log("END");
 }
 
 function getRandomNum() {
