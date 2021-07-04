@@ -3,6 +3,13 @@ import { Animation } from './animationClass.js';
 var globalArray = [];
 let flag = false;
 let counter = 0;
+
+export function mergeSortSet()
+{
+     globalArray.length = 0;
+     flag = false;
+     counter = 0;
+}
 export function mergeSort(Arr, animations) {
      // this function splits the arrays into smaller pieces and calls a second function that compares and merges them
      console.log(Arr);
@@ -25,13 +32,13 @@ export function mergeSort(Arr, animations) {
      mergeSort(left, animations); // splitting the left side recursivly
      mergeSort(right, animations); // splitting the right side recursivly
      // when the arrays reach to be size of 1 the function will return and will start merging them back
-     Merge(left, right, Arr, mid, animations);
+     Merge(left, right, Arr, animations);
      counter++;
      console.log(Arr);
      console.log('\n');
 }
 
-function Merge(left, right, Arr, mid, animations) {
+function Merge(left, right, Arr,animations) {
      // this function compares the smaller pieces, sees which one is smaller and appends the smaller one into the big array
      // console.log(`Merge ${left} and ${right}`);
      let nL = left.length;
@@ -46,12 +53,15 @@ function Merge(left, right, Arr, mid, animations) {
 
           if (left[i] <= right[j]) {
                // the element from the left array is smaller so it will be appended to the merged array
+
                Arr[k] = left[i];
                k++; // this is the counter for the big array
                i++; // this is the counter for the left array
           } // this means the element from the right array is bigger and he will be appended to the big array, these counters allow us to ignore the previous elements that have been already added
           else {
                Arr[k] = right[j];
+               // animations.push(new Animation('swap', compareValue1, compareValue2));
+
                k++;
                j++;
           }

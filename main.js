@@ -3,7 +3,7 @@ import { Button } from "./buttonClass.js";
 import { bubbleSort } from "./bubbleSort.js";
 import { getInterval, playAnimation } from './playAnim.js';
 import { selectionSort } from "./selectionSort.js";
-import { mergeSort } from "./mergeSort.js";
+import { mergeSort, mergeSortSet } from "./mergeSort.js";
 const generateNewArrayBTN = new Button(document.getElementById('generateNewArrayBTN'));
 const bubbleSortBTN = new Button (document.getElementById('bubbleSortBTN'));
 const selectionSortBTN = new Button ( document.getElementById('selectionSortBTN'));
@@ -74,5 +74,6 @@ mergeSortBTN.id.addEventListener('click', e=>{
         playAnimation(elements, animations, ANIMATION_SPEED);
         mergeSortBTN.clicked = true;
         console.log(`Sorted by merge sort ${array}`);
+        mergeSortSet();
     }
 });
