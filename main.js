@@ -3,7 +3,7 @@ import { Button } from "./buttonClass.js";
 import { bubbleSort } from "./bubbleSort.js";
 import { getInterval, playAnimation } from './playAnim.js';
 import { selectionSort } from "./selectionSort.js";
-import { mergeSort, mergeSortSet } from "./mergeSort.js";
+import { mergeSort, setGlobalArray } from "./mergeSort.js";
 const generateNewArrayBTN = new Button(document.getElementById('generateNewArrayBTN'));
 const bubbleSortBTN = new Button (document.getElementById('bubbleSortBTN'));
 const selectionSortBTN = new Button ( document.getElementById('selectionSortBTN'));
@@ -41,7 +41,6 @@ arraySizeSlider.oninput = ()=>{
 // EVENT LISTENERS FOR THE BUTTONS
 generateNewArrayBTN.id.addEventListener('click', e=>{
     generateNumbers(board, array, NUMBERS);
-    // console.log(array)
     clearInterval(getInterval());
     bubbleSortBTN.clicked = false;
     selectionSortBTN.clicked = false;
@@ -67,13 +66,13 @@ selectionSortBTN.id.addEventListener('click', e=>{
 mergeSortBTN.id.addEventListener('click', e=>{
     if(!bubbleSortBTN.clicked && !selectionSortBTN.clicked && !mergeSortBTN.clicked)
     {
+        setGlobalArray(array);
+        console.log(array);
         animations.length = 0;
-        console.log(`Original array ${array}`);
         mergeSort(array, animations); // sorts the array and gives me the animations
-        console.log(animations);
         playAnimation(elements, animations, ANIMATION_SPEED);
         mergeSortBTN.clicked = true;
-        console.log(`Sorted by merge sort ${array}`);
-        mergeSortSet();
+        console.log(array);
+
     }
 });

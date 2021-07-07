@@ -12,11 +12,9 @@ export function playAnimation(elements, anims, ANIMATION_SPEED) {
      let counter = 0;
      if (anims.length === 0) return;
      x = setInterval(() => {
-          // console.log(`Exec anim: ${anims[counter].type}`);
           let currAnim = anims[counter];
           switch (currAnim.type) {
                case "changeColor":
-                    // console.log(`Change colors at ${currAnim.a} and ${currAnim.b}`);
                     if (currAnim.a != -1)
                          elements[currAnim.a].style.backgroundColor =
                               COMPARE_COLOR;
@@ -25,7 +23,6 @@ export function playAnimation(elements, anims, ANIMATION_SPEED) {
                               COMPARE_COLOR;
                     break;
                case "reverseColor":
-                    // console.log(`Reverse colors at ${currAnim.a} and ${currAnim.b}`);
                     if (currAnim.a != -1)
                          elements[currAnim.a].style.backgroundColor =
                               DEFAULT_COLOR;
@@ -34,8 +31,6 @@ export function playAnimation(elements, anims, ANIMATION_SPEED) {
                               DEFAULT_COLOR;
                     break;
                case "swap":
-                    // console.log(`Heights: ${elements[currAnim.a].style.height}`);
-                    // console.log(`Swap ${currAnim.a} and ${currAnim.b}`);
                     let temp = elements[currAnim.a].style.height;
                     elements[currAnim.a].style.height = `${
                          elements[currAnim.b].style.height
@@ -54,7 +49,6 @@ export function playAnimation(elements, anims, ANIMATION_SPEED) {
                     elements[currAnim.a].style.backgroundColor = DEFAULT_COLOR;
                     break;
                case "putInPlace":
-                    // curranim.a where to placeit, curranim.b who to place there
                     break;
                case "finish":
                     clearInterval(x);
